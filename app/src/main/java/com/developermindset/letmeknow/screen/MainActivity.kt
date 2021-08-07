@@ -27,6 +27,8 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        window.statusBarColor = ContextCompat.getColor(this, R.color.app_background)
+
         btn_power_on_off.setOnClickListener {
             try {
                 if (usagePermissionCheck()) {
