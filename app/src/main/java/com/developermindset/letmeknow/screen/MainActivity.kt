@@ -15,5 +15,7 @@ class MainActivity : AppCompatActivity() {
 
     fun initialization(){
         val isServiceEnable = StoreData(this).getIsServiceEnable()
+
+
     }
 }

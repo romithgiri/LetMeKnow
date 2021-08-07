@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">LetMeKnow</string>
+
+    <string name="notification_channel">LetMeKnow</string>
+    <string name="notification_title">Let Me Know</string>
+    <string name="notification_description">LetMeKnow App will notify if camera or microphone in use</string>
+
 </resources>
