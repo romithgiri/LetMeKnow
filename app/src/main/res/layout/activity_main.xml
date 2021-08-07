@@ -16,20 +16,20 @@
         android:layout_marginStart="24dp"
         android:fontFamily="sans-serif-black"
         android:letterSpacing="0.1"
-        android:text="Let Me Know"
+        android:text="LetMeKnow"
         android:textColor="#707477"
         android:textSize="20sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="@+id/btn_add_new"
-        app:layout_constraintEnd_toStartOf="@+id/btn_add_new"
+        app:layout_constraintBottom_toBottomOf="@+id/btn_power_on_off"
+        app:layout_constraintEnd_toStartOf="@+id/btn_power_on_off"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintHorizontal_chainStyle="spread_inside"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/btn_add_new"
+        app:layout_constraintTop_toTopOf="@+id/btn_power_on_off"
         app:layout_neu_backgroundColor="#202427" />
 
     <com.google.android.material.button.MaterialButton
-        android:id="@+id/btn_add_new"
+        android:id="@+id/btn_power_on_off"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
@@ -42,7 +42,7 @@
         android:paddingTop="12dp"
         android:paddingEnd="20dp"
         android:paddingBottom="12dp"
-        android:text="Enable"
+        android:text="OFF"
         android:textAllCaps="false"
         android:textColor="#e9ebea"
         android:textSize="18sp"
@@ -76,7 +76,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_add_new"
+        app:layout_constraintTop_toBottomOf="@+id/btn_power_on_off"
         app:layout_neu_backgroundColor="#202427">
 
         <LinearLayout
@@ -85,6 +85,7 @@
             android:orientation="vertical">
 
             <com.thelumiereguy.neumorphicview.views.NeumorphicCardView
+                android:id="@+id/view_camera"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/_25sdp"
@@ -235,6 +236,7 @@
                         android:insetLeft="0dp"
                         android:insetTop="0dp"
                         android:insetRight="0dp"
+                        android:visibility="gone"
                         android:insetBottom="0dp"
                         android:paddingStart="@dimen/_5sdp"
                         android:paddingTop="12dp"
@@ -248,9 +250,9 @@
                         app:backgroundTint="#3d65ad"
                         app:cornerRadius="36dp"
                         app:layout_cardRadius="128"
-                        app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintHorizontal_bias="0.5"
-                        app:layout_constraintTop_toBottomOf="@+id/view_line_camera"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="@+id/view_line_camera"
                         app:layout_enableHighlight="true"
                         app:layout_enableShadow="true"
                         app:layout_enableStroke="true"
@@ -272,6 +274,7 @@
             </com.thelumiereguy.neumorphicview.views.NeumorphicCardView>
 
             <com.thelumiereguy.neumorphicview.views.NeumorphicCardView
+                android:id="@+id/view_microphone"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/_30sdp"
@@ -422,6 +425,7 @@
                         android:insetTop="0dp"
                         android:insetRight="0dp"
                         android:insetBottom="0dp"
+                        android:visibility="gone"
                         android:paddingStart="@dimen/_5sdp"
                         android:paddingTop="12dp"
                         android:paddingEnd="@dimen/_5sdp"
@@ -434,9 +438,9 @@
                         app:backgroundTint="#3d65ad"
                         app:cornerRadius="36dp"
                         app:layout_cardRadius="128"
-                        app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintHorizontal_bias="0.5"
-                        app:layout_constraintTop_toBottomOf="@+id/view_line_microphone"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="@+id/view_line_microphone"
                         app:layout_enableHighlight="true"
                         app:layout_enableShadow="true"
                         app:layout_enableStroke="true"

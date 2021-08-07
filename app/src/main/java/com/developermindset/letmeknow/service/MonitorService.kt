@@ -31,6 +31,7 @@ class MonitorService : Service() {
 
     override fun onCreate() {
         super.onCreate()
+        println("=======================================================")
         val notification = createNotification()
         startForeground(1, notification)
     }

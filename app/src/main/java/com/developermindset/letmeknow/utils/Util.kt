@@ -1,15 +1,16 @@
 package com.developermindset.letmeknow.utils
 
-import android.app.Notification
-import android.app.NotificationChannel
-import android.app.NotificationManager
-import android.app.PendingIntent
+import android.app.*
 import android.content.Context
+import android.content.Context.ACTIVITY_SERVICE
 import android.content.Intent
+import android.content.pm.PackageManager
 import android.graphics.Color
 import android.media.RingtoneManager
 import android.os.Build
+import android.os.Process
 import android.widget.RemoteViews
+import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.NotificationCompat
 import androidx.core.app.TaskStackBuilder
 import com.developermindset.letmeknow.R
@@ -17,6 +18,25 @@ import com.developermindset.letmeknow.R
 object Util {
 
     var color: Int = Color.argb(255, 228, 14, 18)
+
+    fun hasUsagePermission(context: Context): Boolean {
+        val appOps = context.getSystemService(AppCompatActivity.APP_OPS_SERVICE) as AppOpsManager
+        val mode = appOps.checkOpNoThrow(
+            AppOpsManager.OPSTR_GET_USAGE_STATS,
+            Process.myUid(), context.packageName
+        )
+        return mode == AppOpsManager.MODE_ALLOWED
+    }
+
+    fun isBackgroundServiceRunning(context: Context, serviceClass: Class<*>): Boolean {
+        val manager = context.getSystemService(ACTIVITY_SERVICE) as ActivityManager
+        for (service in manager.getRunningServices(Int.MAX_VALUE)) {
+            if (serviceClass.name == service.service.className) {
+                return true
+            }
+        }
+        return false
+    }
 
     fun showNotificationWithCustomLayout2(
         context: Context,
@@ -69,7 +89,8 @@ object Util {
     }
 
     fun clearNotification(context: Context, notificationId: Int) {
-        val mNotificationManager = context.getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
+        val mNotificationManager =
+            context.getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
         mNotificationManager.cancel(notificationId)
     }
 
