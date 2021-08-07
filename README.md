@@ -10,7 +10,7 @@ Notify user whenever camera or microphone is used by any installed application i
   </tr>
   <tr>
     <td><img src="https://github.com/romithgiri/LetMeKnow/blob/main/screenshots/1.png" width="450" height="512"/></td>
-    <td><img src="https://github.com/romithgiri/LetMeKnow/blob/main/screenshots/2.png" width="300" height="512"/></td>
+    <td><img src="https://github.com/romithgiri/LetMeKnow/blob/main/screenshots/2.png" width="450" height="512"/></td>
   </tr>
 </table>
 
@@ -19,6 +19,6 @@ Notify user whenever camera or microphone is used by any installed application i
     <td>3. After Enable</td>
   </tr>
   <tr>
-    <td><img src="https://github.com/romithgiri/LetMeKnow/blob/main/screenshots/3.png" width="288" height="512"/></td>
+    <td><img src="https://github.com/romithgiri/LetMeKnow/blob/main/screenshots/3.png" width="458" height="512"/></td>
   </tr>
  </table>
