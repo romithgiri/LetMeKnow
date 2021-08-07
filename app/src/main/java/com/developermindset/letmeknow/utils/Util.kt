@@ -38,7 +38,7 @@ object Util {
         return false
     }
 
-    fun showNotificationWithCustomLayout2(
+    fun showNotificationWithCustomLayout(
         context: Context,
         notificationId: Int,
         channelId: String,
@@ -64,7 +64,7 @@ object Util {
         contentView.setTextViewText(R.id.title, title)
         contentView.setTextViewText(R.id.text, body)
         contentView.setImageViewResource(R.id.image, icon)
-        contentView.setImageViewResource(R.id.bg, bgColor)
+        //contentView.setImageViewResource(R.id.bg, bgColor)
 
         val mBuilder = NotificationCompat.Builder(context, channelId)
         mBuilder.setContent(contentView)

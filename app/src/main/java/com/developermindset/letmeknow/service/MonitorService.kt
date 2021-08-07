@@ -52,12 +52,12 @@ class MonitorService : Service() {
                 if (StoreData(this@MonitorService).getIsCameraServiceEnable()) {
                     val intent = Intent(this@MonitorService, MainActivity::class.java)
                     intent.putExtra("isStartFromDeepLink", true)
-                    Util.showNotificationWithCustomLayout2(
+                    Util.showNotificationWithCustomLayout(
                         this@MonitorService,
                         101,
                         "Camera",
                         "Camera",
-                        "Camera alert",
+                        "Camera In Use",
                         "${getAppName()} is using camera",
                         intent,
                         R.drawable.ic_camera,
@@ -79,12 +79,12 @@ class MonitorService : Service() {
                     super.onRecordingConfigChanged(configs)
                     if (StoreData(this@MonitorService).getIsMicroPhoneServiceEnable()) {
                         if (configs.isNotEmpty()) {
-                            Util.showNotificationWithCustomLayout2(
+                            Util.showNotificationWithCustomLayout(
                                 this@MonitorService,
                                 102,
                                 "Microphone",
                                 "Microphone",
-                                "Microphone Usage alert",
+                                "Microphone In Use",
                                 "${getAppName()} is using microphone",
                                 intent,
                                 R.drawable.ic_mic,

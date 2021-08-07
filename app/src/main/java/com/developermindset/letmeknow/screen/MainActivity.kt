@@ -184,72 +184,10 @@ class MainActivity : AppCompatActivity() {
 
         btnCancel.setOnClickListener {
             mBuilder.dismiss()
-            //finish()
+            finish()
         }
 
         mBuilder.show()
-    }
-
-    private fun initialization() {
-        Log.i(TAG, "====================>>>>>: ${Util.hasUsagePermission(this)}")
-        if (Util.hasUsagePermission(this)) {
-            val isServiceEnable = StoreData(this).getIsServiceEnable()
-            if (isServiceEnable) {
-                if (Util.isBackgroundServiceRunning(this, MonitorService::class.java)) {
-                    if (isServiceEnable) {
-                        btn_power_on_off.setIconTintResource(R.color.green)
-                        btn_power_on_off.setTextColor(ContextCompat.getColor(this, R.color.green))
-
-                        if (StoreData(this).getIsCameraServiceEnable()) {
-                            tv_camera_status.text = "Enable"
-                            tv_camera_status.setTextColor(
-                                ContextCompat.getColor(
-                                    this,
-                                    R.color.green
-                                )
-                            )
-                            btn_enable_camera.alpha = 0.4F
-                            btn_enable_camera.isEnabled = false
-                        }
-
-                        if (StoreData(this).getIsMicroPhoneServiceEnable()) {
-                            tv_microphone_status.text = "Enable"
-                            tv_microphone_status.setTextColor(
-                                ContextCompat.getColor(
-                                    this,
-                                    R.color.green
-                                )
-                            )
-                            btn_enable_microphone.alpha = 0.4F
-                            btn_enable_microphone.isEnabled = false
-                        }
-                    } else {
-                        btn_power_on_off.setIconTintResource(R.color.red)
-                        tv_camera_status.setTextColor(ContextCompat.getColor(this, R.color.red))
-
-                        tv_camera_status.text = "Disable"
-                        tv_camera_status.setTextColor(ContextCompat.getColor(this, R.color.red))
-                        btn_disable_camera.alpha = 0.4F
-                        btn_disable_camera.isEnabled = false
-
-                        tv_microphone_status.text = "Disable"
-                        tv_microphone_status.setTextColor(ContextCompat.getColor(this, R.color.red))
-                        btn_disable_microphone.alpha = 0.4F
-                        btn_disable_microphone.isEnabled = false
-                    }
-                } else {
-                    Intent(this, MonitorService::class.java).also {
-                        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-                            startForegroundService(it)
-                            return
-                        }
-                        startService(it)
-                    }
-                }
-            }
-        } else {
-            requestAppUsagePermission()
-        }
     }
 
     private fun enableButtons(flag: Boolean){
